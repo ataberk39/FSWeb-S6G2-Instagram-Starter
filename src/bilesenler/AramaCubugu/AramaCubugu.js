@@ -9,14 +9,22 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import "./AramaCubugu.css";
 
+
 const AramaCubugu = (props) => {
+  const { aramaFn } = props
+
+  const handleChange = (event)=>{
+    aramaFn(event.target.value)
+  } 
+
+
   return (
     <div className="search-bar-wrapper">
       <div className="social">
         <FontAwesomeIcon icon={faInstagram} />
       </div>
       <form className="search-form">
-        <input type="text" placeholder="Arama" />
+        <input type="text" placeholder="Arama" onChange={handleChange}/>
       </form>
       <div className="social-wrapper">
         <div className="social">
